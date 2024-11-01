@@ -1,0 +1,58 @@
+{
+    "portfolio_items": [
+        {
+            "id": 1,
+            "title": "Threads",
+            "subtitle": "Illustration",
+            "image": "images/portfolio/1.jpg",
+            "description": "Use this area to describe your project...",
+            "client": "Threads",
+            "category": "Illustration"
+        },
+        {
+            "id": 2,
+            "title": "Explore",
+            "subtitle": "Graphic Design",
+            "image": "images/portfolio/2.jpg",
+            "description": "Another project description...",
+            "client": "Explore",
+            "category": "Graphic Design"
+        },
+        {
+            "id": 3,
+            "title": "Finish",
+            "subtitle": "Identity",
+            "image": "images/portfolio/3.jpg",
+            "description": "A project about branding...",
+            "client": "Finish",
+            "category": "Identity"
+        },
+        {
+            "id": 4,
+            "title": "Lines",
+            "subtitle": "Branding",
+            "image": "images/portfolio/4.jpg",
+            "description": "A branding project...",
+            "client": "Lines",
+            "category": "Branding"
+        },
+        {
+            "id": 5,
+            "title": "Southwest",
+            "subtitle": "Website Design",
+            "image": "images/portfolio/5.jpg",
+            "description": "A website design project...",
+            "client": "Southwest",
+            "category": "Website Design"
+        },
+        {
+            "id": 6,
+            "title": "Window",
+            "subtitle": "Photography",
+            "image": "images/portfolio/6.jpg",
+            "description": "A photography project...",
+            "client": "Window",
+            "category": "Photography"
+        }
+    ]
+}
