@@ -10865,22 +10865,24 @@ p {
 }
 
 header.masthead {
-    padding-top: 10.5rem;
-    padding-bottom: 6rem;
-    text-align: center;
-    color: #000;
-    background: linear-gradient(135deg, #F5E7DE 0%, #F2BFA4 100%);
-    background-size: cover;
-    background-position: center center;
-    background-attachment: scroll;
-    position: relative;
-    min-height: 100vh; 
-    margin-bottom: 0;  
-    display: flex;    
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
+  padding-top: 10.5rem;
+  padding-bottom: 6rem;
+  text-align: center;
+  color: #000;
+  background-image: url("../images/masthead-bg.jpg"); /* Direct path from CSS */
+  background-size: cover;
+  background-position: center center;
+  background-attachment: scroll;
+  position: relative;
+  min-height: 100vh; 
+  margin-bottom: 0;  
+  display: flex;    
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }
+
+
 
 /* Import modern font - add this to your HTML head */
 @import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&display=swap');
@@ -10891,7 +10893,8 @@ header.masthead .masthead-heading {
     font-weight: 600;
     line-height: 3.25rem;
     margin-bottom: 2rem;
-    letter-spacing: -0.02em; /* Slight negative tracking for modern look */
+    letter-spacing: -0.02em; 
+    color: #EAD8B1;
 }
 
 /* Greeting animation container */
@@ -10933,6 +10936,7 @@ header.masthead .masthead-heading {
   display: flex;
   justify-content: center;
   align-items: center;
+  color: #EAD8B1;
 }
 
 .greeting-text:nth-child(1) {
