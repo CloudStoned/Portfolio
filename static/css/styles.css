@@ -8007,6 +8007,8 @@ textarea.form-control-lg {
 .text-muted {
   --bs-text-opacity: 1;
   color: var(--bs-secondary-color) !important;
+  font-family: "Gowun Dodum", sans-serif;
+  font-size: 25px;
 }
 
 .text-black-50 {
@@ -10744,17 +10746,19 @@ body {
 }
 
 p {
-  line-height: 1.75;
+  line-height: 1.5;
 }
 
 .page-section {
   padding: 9rem 0;
 }
+
 .page-section h2.section-heading, .page-section .section-heading.h2 {
   font-size: 2.5rem;
   margin-top: 0;
   margin-bottom: 1rem;
 }
+
 .page-section h3.section-subheading, .page-section .section-subheading.h3 {
   font-size: 1rem;
   font-weight: 400;
