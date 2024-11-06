@@ -19,7 +19,6 @@ def load_portfolio_data():
         print(f"Warning: Invalid JSON in portfolio data file")
         return []
 
-
 @app.route('/')
 def home():
     portfolio_items = load_portfolio_data()

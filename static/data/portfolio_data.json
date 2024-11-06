@@ -4,7 +4,7 @@
             "id": 1,
             "title": "Threads",
             "subtitle": "Illustration",
-            "image": "images/portfolio/1.jpg",
+            "image": "images/portfolio/hci.png",
             "description": "Use this area to describe your project...",
             "client": "Threads",
             "category": "Illustration"
@@ -13,7 +13,7 @@
             "id": 2,
             "title": "Explore",
             "subtitle": "Graphic Design",
-            "image": "images/portfolio/2.jpg",
+            "image": "images/portfolio/invsys.png",
             "description": "Another project description...",
             "client": "Explore",
             "category": "Graphic Design"
@@ -22,7 +22,7 @@
             "id": 3,
             "title": "Finish",
             "subtitle": "Identity",
-            "image": "images/portfolio/3.jpg",
+            "image": "images/portfolio/asl.png",
             "description": "A project about branding...",
             "client": "Finish",
             "category": "Identity"
@@ -31,7 +31,7 @@
             "id": 4,
             "title": "Lines",
             "subtitle": "Branding",
-            "image": "images/portfolio/4.jpg",
+            "image": "images/portfolio/blog.png",
             "description": "A branding project...",
             "client": "Lines",
             "category": "Branding"
