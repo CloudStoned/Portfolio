@@ -11088,32 +11088,42 @@ header.masthead .masthead-heading {
 }
 
 .portfolio-modal .modal-dialog {
-  margin: 1rem;
+  margin-top: 8rem;
   max-width: 100vw;
 }
+
 .portfolio-modal .modal-content {
   padding-top: 6rem;
   padding-bottom: 6rem;
   text-align: center;
 }
+
 .portfolio-modal .modal-content h2, .portfolio-modal .modal-content .h2 {
-  font-size: 3rem;
-  line-height: 3rem;
+  font-size: 4rem;  /* Increased from 3rem */
+  line-height: 4rem;  /* Increased from 3rem */
 }
+
 .portfolio-modal .modal-content p.item-intro {
   font-style: italic;
   margin-bottom: 2rem;
   font-family: "Roboto Slab", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+  font-size: 1.5rem;  /* Added font size */
 }
+
 .portfolio-modal .modal-content p {
   margin-bottom: 2rem;
+  font-size: 1.5rem;  /* Added larger font size */
 }
+
 .portfolio-modal .modal-content ul.list-inline {
   margin-bottom: 2rem;
+  font-size: 1.5rem;  /* Added larger font size */
 }
+
 .portfolio-modal .modal-content img {
   margin-bottom: 2rem;
 }
+
 .portfolio-modal .close-modal {
   position: absolute;
   top: 1.5rem;
@@ -11123,6 +11133,7 @@ header.masthead .masthead-heading {
   cursor: pointer;
   background-color: transparent;
 }
+
 .portfolio-modal .close-modal:hover {
   opacity: 0.3;
 }
