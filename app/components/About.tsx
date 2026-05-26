@@ -53,7 +53,7 @@ export default function About() {
               </li>
               <li className="flex items-center gap-2 text-[#555555] bg-[#EEEFEA]/60 border border-[#E5E5E2]/40 rounded px-3 py-2">
                 <div className="w-1.5 h-1.5 rounded-full bg-[#4A6FA5]" />
-                <span>Core Setup: <strong className="text-[#1A1A1A]">n8n, Claude API, Python</strong></span>
+                <span>Core Setup: <strong className="text-[#1A1A1A]">n8n, Claude API, Python, NextJS</strong></span>
               </li>
             </ul>
           </div>
