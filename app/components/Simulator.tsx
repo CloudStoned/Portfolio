@@ -11,7 +11,7 @@ export default function Simulator() {
     if (!isSimRunning) return;
     const interval = setInterval(() => {
       setSimStep((prev) => (prev + 1) % 4);
-    }, 4500);
+    }, 2000);
     return () => clearInterval(interval);
   }, [isSimRunning]);
 

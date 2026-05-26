@@ -27,7 +27,7 @@ export default function Experience() {
                   <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-1">
                     <h3 className="text-base font-bold text-[#1A1A1A]">AI Automation Specialist</h3>
                     <span className="text-[10px] uppercase tracking-wider bg-[#4A6FA5]/10 text-[#4A6FA5] font-bold px-2 py-0.5 rounded w-fit">
-                      Current | Freelance
+                      Current
                     </span>
                   </div>
                   <p className="text-xs text-[#555555] font-semibold">
