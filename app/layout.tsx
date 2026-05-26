@@ -1,6 +1,7 @@
 import type {Metadata} from 'next';
 import { Inter } from 'next/font/google';
 import './globals.css'; // Global styles
+import SmoothScroll from './components/SmoothScroll';
 
 const inter = Inter({
   subsets: ['latin'],
@@ -14,10 +15,13 @@ export const metadata: Metadata = {
 
 export default function RootLayout({children}: {children: React.ReactNode}) {
   return (
-    <html lang="en" className={`${inter.variable} scroll-smooth`}>
+    <html lang="en" className={inter.variable}>
       <body className="font-sans bg-[#F9F9F7] text-[#1A1A1A] antialiased" suppressHydrationWarning>
-        {children}
+        <SmoothScroll>
+          {children}
+        </SmoothScroll>
       </body>
     </html>
   );
 }
+
