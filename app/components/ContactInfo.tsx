@@ -70,24 +70,6 @@ export default function ContactInfo({
         </div>
       </address>
 
-      {localInquiries.length > 0 && (
-        <div className="space-y-3 pt-5 border-t border-[#E5E5E2]" id="contact-local-submissions">
-          <span className="text-[10px] font-bold text-[#4A6FA5] uppercase tracking-[0.15em] block">
-            Your Sent Inquiries ({localInquiries.length})
-          </span>
-          <ul className="max-h-48 overflow-y-auto space-y-2.5 pr-2">
-            {localInquiries.map((inq) => (
-              <li key={inq.id} className="p-3 bg-[#F9F9F7]/60 border border-[#E5E5E2] rounded space-y-1">
-                <div className="flex justify-between items-center text-[9px] uppercase tracking-wider text-[#555555]">
-                  <span className="font-bold text-[#1A1A1A]">{inq.business}</span>
-                  <span>{inq.date}</span>
-                </div>
-                <p className="text-xs text-[#555555] italic truncate">&ldquo;{inq.message}&rdquo;</p>
-              </li>
-            ))}
-          </ul>
-        </div>
-      )}
     </div>
   );
 }
