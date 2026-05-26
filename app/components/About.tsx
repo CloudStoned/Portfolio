@@ -35,7 +35,7 @@ export default function About() {
             </h2>
 
             <p className="text-sm text-[#555555] leading-relaxed" id="about-description">
-              Cloud Neo is an AI Automation Specialist with 3+ years of experience building intelligent systems that replace manual work. He designs and ships custom automation pipelines, AI agents, and full stack integrations using n8n, Claude APIs, and LangChain — helping small businesses and startups save time, reduce errors, and scale without adding headcount.
+              Cloud Neo is an AI Automation Specialist with 2+ years of experience building intelligent systems that replace manual work. He designs and ships custom automation pipelines, AI agents, and full stack integrations using n8n, Claude APIs, and LangChain — helping small businesses and startups save time, reduce errors, and scale without adding headcount.
             </p>
 
             <ul className="grid grid-cols-1 sm:grid-cols-2 gap-3 pt-3 text-xs" id="about-bullets">
