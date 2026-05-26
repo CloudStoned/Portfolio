@@ -19,7 +19,7 @@ export const services: ServiceCard[] = [
 ];
 
 export const techStack = {
-  ai: ['n8n', 'Claude API', 'mcp', 'LangChain', 'LangGraph', 'LangSmith', 'RAG', 'Vector Databases', 'Prompt Engineering', 'Gemini API', 'ElevenLabs', 'Supabase', 'OpenRouter'],
+  ai: ['n8n', 'Anthropic Claude (API, Claude Code, MCP)', 'LangChain', 'LangGraph', 'LangSmith', 'RAG', 'Vector Databases', 'Prompt Engineering', 'Gemini API', 'ElevenLabs', 'Supabase', 'OpenRouter'],
   dev: ['Python', 'NextJs', 'FastAPI', 'RESTful APIs', 'YOLOv8', 'ResNet', 'Webhook'],
   tools: ['ChatGPT', 'Jira', 'Roboflow', 'Heroku', 'PostgreSQL', 'Git', 'Docker']
 };
