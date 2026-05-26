@@ -18,6 +18,7 @@ export default function Contact() {
     setContactMsg,
     isSubmitting,
     submitSuccess,
+    submitError,
     localInquiries,
     handleCopyEmail,
     handleContactSubmit
@@ -28,9 +29,9 @@ export default function Contact() {
       <div className="mx-auto max-w-7xl">
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-start">
           <ContactInfo 
-            emailCopied={emailCopied}
-            handleCopyEmail={handleCopyEmail}
-            localInquiries={localInquiries}
+             emailCopied={emailCopied}
+             handleCopyEmail={handleCopyEmail}
+             localInquiries={localInquiries}
           />
           <ContactForm 
             contactName={contactName}
@@ -43,6 +44,7 @@ export default function Contact() {
             setContactMsg={setContactMsg}
             isSubmitting={isSubmitting}
             submitSuccess={submitSuccess}
+            submitError={submitError}
             handleContactSubmit={handleContactSubmit}
           />
         </div>

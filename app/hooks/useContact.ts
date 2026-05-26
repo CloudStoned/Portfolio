@@ -1,6 +1,6 @@
 'use client';
 
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 import { InquireRecord } from '../types';
 
 export function useContact() {
@@ -11,21 +11,8 @@ export function useContact() {
   const [contactMsg, setContactMsg] = useState('');
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [submitSuccess, setSubmitSuccess] = useState(false);
+  const [submitError, setSubmitError] = useState<string | null>(null);
   const [localInquiries, setLocalInquiries] = useState<InquireRecord[]>([]);
-
-  useEffect(() => {
-    const saved = localStorage.getItem('cnb_inquiries');
-    if (saved) {
-      try {
-        const parsed = JSON.parse(saved);
-        setTimeout(() => {
-          setLocalInquiries(parsed);
-        }, 0);
-      } catch (e) {
-        console.error('Error parsing inquiries', e);
-      }
-    }
-  }, []);
 
   const handleCopyEmail = () => {
     navigator.clipboard.writeText('bcloudneo@gmail.com');
@@ -38,32 +25,64 @@ export function useContact() {
     if (!contactName || !contactEmail || !contactMsg) return;
     
     setIsSubmitting(true);
-    await new Promise((resolve) => setTimeout(resolve, 1200));
-    
-    const newInquiry: InquireRecord = {
-      id: Math.random().toString(36).substring(2, 11),
-      name: contactName,
-      email: contactEmail,
-      business: contactBusiness || 'Not specified',
-      message: contactMsg,
-      date: new Date().toLocaleDateString('en-US', { month: 'short', day: 'numeric', year: 'numeric' })
-    };
+    setSubmitError(null);
+    setSubmitSuccess(false);
 
-    const updated = [newInquiry, ...localInquiries];
-    setLocalInquiries(updated);
-    localStorage.setItem('cnb_inquiries', JSON.stringify(updated));
+    try {
+      const response = await fetch('/api/contact', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({
+          name: contactName,
+          email: contactEmail,
+          business: contactBusiness,
+          message: contactMsg,
+        }),
+      });
 
-    setIsSubmitting(false);
-    setSubmitSuccess(true);
-    
-    setContactName('');
-    setContactEmail('');
-    setContactBusiness('');
-    setContactMsg('');
+      const data = await response.json();
 
-    setTimeout(() => {
-      setSubmitSuccess(false);
-    }, 6000);
+      if (!response.ok) {
+        throw new Error(data.error || 'Failed to dispatch inquiry. Please try again.');
+      }
+      
+      const newInquiry: InquireRecord = {
+        id: Math.random().toString(36).substring(2, 11),
+        name: contactName,
+        email: contactEmail,
+        business: contactBusiness || 'Not specified',
+        message: contactMsg,
+        date: new Date().toLocaleDateString('en-US', { month: 'short', day: 'numeric', year: 'numeric' })
+      };
+
+      const updated = [newInquiry, ...localInquiries];
+      setLocalInquiries(updated);
+
+      setSubmitSuccess(true);
+      
+      setContactName('');
+      setContactEmail('');
+      setContactBusiness('');
+      setContactMsg('');
+
+      if (data.warning) {
+        console.warn(data.warning);
+      }
+
+      setTimeout(() => {
+        setSubmitSuccess(false);
+      }, 6000);
+    } catch (err: any) {
+      console.error('Error submitting form:', err);
+      setSubmitError(err.message || 'Something went wrong. Please try again.');
+      setTimeout(() => {
+        setSubmitError(null);
+      }, 6000);
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
   return {
@@ -78,8 +97,11 @@ export function useContact() {
     setContactMsg,
     isSubmitting,
     submitSuccess,
+    submitError,
     localInquiries,
     handleCopyEmail,
     handleContactSubmit
   };
 }
+
+

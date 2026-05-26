@@ -1,7 +1,7 @@
 'use client';
 
 import React from 'react';
-import { ArrowRight, CheckCircle2 } from 'lucide-react';
+import { ArrowRight, CheckCircle2, AlertCircle } from 'lucide-react';
 import { motion, AnimatePresence } from 'motion/react';
 
 interface ContactFormProps {
@@ -15,6 +15,7 @@ interface ContactFormProps {
   setContactMsg: (val: string) => void;
   isSubmitting: boolean;
   submitSuccess: boolean;
+  submitError: string | null;
   handleContactSubmit: (e: React.FormEvent) => void;
 }
 
@@ -23,7 +24,7 @@ export default function ContactForm({
   contactEmail, setContactEmail,
   contactBusiness, setContactBusiness,
   contactMsg, setContactMsg,
-  isSubmitting, submitSuccess, handleContactSubmit
+  isSubmitting, submitSuccess, submitError, handleContactSubmit
 }: ContactFormProps) {
   return (
     <div className="lg:col-span-7 bg-white rounded-md border border-[#E5E5E2] p-6 shadow-[0_4px_12px_rgba(0,0,0,0.02)]" id="contact-form-block">
@@ -69,6 +70,19 @@ export default function ContactForm({
               </p>
               <p className="text-green-700 leading-relaxed text-[11px]">
                 Thank you! Cloud Neo has received your workflow context. He will get back to you within 24 hours.
+              </p>
+            </motion.div>
+          )}
+          {submitError && (
+            <motion.div 
+              initial={{ opacity: 0, y: 10 }} animate={{ opacity: 1, y: 0 }} exit={{ opacity: 0, y: -10 }}
+              className="p-4 bg-red-50 border border-red-200 text-red-800 rounded text-xs space-y-1"
+            >
+              <p className="font-bold flex items-center gap-1.5 uppercase tracking-wider text-[10px]">
+                <AlertCircle className="w-3.5 h-3.5 text-red-600" /> Inquiry Dispatch Failed
+              </p>
+              <p className="text-red-700 leading-relaxed text-[11px]">
+                {submitError}
               </p>
             </motion.div>
           )}
