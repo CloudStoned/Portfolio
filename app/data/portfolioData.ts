@@ -19,18 +19,18 @@ export const services: ServiceCard[] = [
 ];
 
 export const techStack = {
-  ai: ['n8n', 'Claude API', 'LangChain', 'LangGraph', 'LangSmith', 'RAG', 'Vector Databases', 'Prompt Engineering'],
-  dev: ['Python', 'JavaScript', 'FastAPI', 'Ruby on Rails', 'RESTful APIs', 'PostgreSQL', 'Docker', 'Heroku', 'Git'],
-  tools: ['ChatGPT', 'Jira', 'Webhook', 'Roboflow', 'YOLOv8', 'ResNet']
+  ai: ['n8n', 'Claude API', 'LangChain', 'LangGraph', 'LangSmith', 'RAG', 'Vector Databases', 'Prompt Engineering', 'Gemini API', 'ElevenLabs', 'Supabase', 'OpenRouter'],
+  dev: ['Python', 'NextJs', 'FastAPI', 'RESTful APIs', 'YOLOv8', 'ResNet', 'Webhook'],
+  tools: ['ChatGPT', 'Jira', 'Roboflow', 'Heroku', 'PostgreSQL', 'Git', 'Docker']
 };
 
 export const projects: Project[] = [
   {
     id: 1,
-    title: 'Agentic Voice & Sales AI (n8n)',
+    title: 'Agentic Voice & Sales AI',
     description: 'Telegram-triggered multi-agent AI platform with RAG, Supabase vector storage, ElevenLabs voice agent, Pipedrive CRM integration, and automated lead qualification.',
     automationAngle: 'Fully automated sales pipeline — from lead capture to CRM entry — with zero manual input.',
-    tags: ['n8n', 'RAG', 'ElevenLabs', 'Pipedrive', 'Supabase'],
+    tags: ['n8n', 'RAG', 'ElevenLabs', 'Pipedrive', 'Supabase', 'OpenRouter'],
     category: 'workflows'
   },
   {
@@ -53,7 +53,15 @@ export const projects: Project[] = [
     title: 'AI Content Automation Engine',
     description: 'Automated quiz and lesson plan generation pipeline replacing manual document scanning and drafting — enabling scalable curriculum production.',
     automationAngle: 'Turned a days-long manual process into a fully automated pipeline.',
-    tags: ['LLM APIs', 'Python', 'Automation', 'Prompt Engineering'],
+    tags: ['OpenAI', 'Python', 'Automation', 'Prompt Engineering'],
+    category: 'workflows'
+  },
+  {
+    id: 5,
+    title: 'Lead Gen Automation',
+    description: 'A multi-stage n8n workflow that scrapes local business data via Apify, utilizes Gemini API to extract and clean emails and social links from HTML, and saves structured leads in Google Sheets.',
+    automationAngle: 'Transformed raw web scraping into a self-cleaning leads pipeline that populates Google Sheets in real-time.',
+    tags: ['n8n', 'Apify', 'Gemini API', 'Google Sheets', 'Workflow Automation'],
     category: 'workflows'
   }
 ];
