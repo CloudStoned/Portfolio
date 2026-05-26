@@ -45,7 +45,7 @@ export default function About() {
               </li>
               <li className="flex items-center gap-2 text-[#555555] bg-[#EEEFEA]/60 border border-[#E5E5E2]/40 rounded px-3 py-2">
                 <div className="w-1.5 h-1.5 rounded-full bg-[#4A6FA5]" />
-                <span>Focusing on: <strong className="text-[#1A1A1A]">Workflow Automation & RAG</strong></span>
+                <span>Focusing on: <strong className="text-[#1A1A1A]">Workflow Automation</strong></span>
               </li>
               <li className="flex items-center gap-2 text-[#555555] bg-[#EEEFEA]/60 border border-[#E5E5E2]/40 rounded px-3 py-2">
                 <div className="w-1.5 h-1.5 rounded-full bg-[#4A6FA5]" />
