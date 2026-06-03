@@ -63,6 +63,14 @@ export const projects: Project[] = [
     automationAngle: 'Transformed raw web scraping into a self-cleaning leads pipeline that populates Google Sheets in real-time.',
     tags: ['n8n', 'Apify', 'Gemini API', 'Google Sheets', 'Workflow Automation'],
     category: 'workflows'
+  },
+  {
+    id:6,
+    title: 'Cart Snap',
+    description: 'A smart, real-time web-based grocery assistant and budget tracker. It helps users manage their shopping basket, capture photos of items, manually log pricing, organize products by custom departments, and track total expenditures in real time against a personal budget limit.',
+    automationAngle: '',
+    tags: ['NextJS', 'Google AI Studio', 'Google Stitch', 'Antigravity'],
+    category: ''
   }
 ];
 

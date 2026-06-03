@@ -3,13 +3,14 @@
 import React, { useState } from 'react';
 import { projects } from '../data/portfolioData';
 
-type FilterType = 'all' | 'workflows' | 'deep-learning' | 'rag';
+type FilterType = 'all' | 'workflows' | 'deep-learning' | 'rag' | 'web-app';
 
 export default function Projects() {
   const [projectFilter, setProjectFilter] = useState<FilterType>('all');
 
   const filteredProjects = projects.filter((p) => {
     if (projectFilter === 'all') return true;
+    if (!p.category || p.category === '') return true;
     return p.category === projectFilter;
   });
 
@@ -28,7 +29,7 @@ export default function Projects() {
           </div>
 
           <ul className="flex flex-wrap gap-1 rounded border border-[#E5E5E2] p-1 bg-[#F9F9F7] w-fit shrink-0" id="filter-tabs">
-            {(['all', 'workflows', 'deep-learning', 'rag'] as const).map((tab) => (
+            {(['all', 'workflows', 'deep-learning', 'rag', 'web-app'] as const).map((tab) => (
               <li key={tab}>
                 <button
                   onClick={() => setProjectFilter(tab)}
@@ -42,6 +43,7 @@ export default function Projects() {
                   {tab === 'workflows' && 'Workflows'}
                   {tab === 'deep-learning' && 'Computer Vision'}
                   {tab === 'rag' && 'RAG / QA'}
+                  {tab === 'web-app' && 'Web Apps'}
                 </button>
               </li>
             ))}
@@ -56,9 +58,15 @@ export default function Projects() {
                 id={`project-card-${project.id}`}
               >
                 <div className="space-y-3">
-                  <span className="text-[9px] font-bold uppercase tracking-widest text-[#4A6FA5] bg-[#4A6FA5]/10 px-2 py-0.5 rounded inline-block">
-                    {project.category === 'workflows' ? 'n8n Workflow' : project.category === 'deep-learning' ? 'Computer Vision' : 'AI Retrieval'}
-                  </span>
+                  {project.category && (
+                    <span className="text-[9px] font-bold uppercase tracking-widest text-[#4A6FA5] bg-[#4A6FA5]/10 px-2 py-0.5 rounded inline-block">
+                      {project.category === 'workflows' ? 'n8n Workflow' :
+                       project.category === 'deep-learning' ? 'Computer Vision' :
+                       project.category === 'rag' ? 'AI Retrieval' :
+                       project.category === 'web-app' ? 'Web App' :
+                       project.category}
+                    </span>
+                  )}
 
                   <h3 className="text-base font-black text-[#1A1A1A] tracking-tight">{project.title}</h3>
                   <p className="text-xs text-[#555555] leading-relaxed">{project.description}</p>

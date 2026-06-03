@@ -4,7 +4,7 @@ export interface Project {
   description: string;
   automationAngle?: string;
   tags: string[];
-  category: 'workflows' | 'deep-learning' | 'rag';
+  category?: string;
 }
 
 export interface ServiceCard {
