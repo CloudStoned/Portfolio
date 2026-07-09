@@ -43,7 +43,7 @@ export const techStack = {
     "ChatGPT",
     "Jira",
     "Heroku",
-    "PostgreSQL",
+    "Supabase",
     "Git",
     "Docker",
     "Twilio",
