@@ -186,12 +186,12 @@ export default function Projects() {
           </div>
 
           <div
-            className="relative w-full max-w-5xl aspect-video overflow-auto"
+            className="w-full max-w-5xl max-h-full overflow-auto"
             onClick={(e) => e.stopPropagation()}
           >
             <div
-              className="relative w-full h-full transition-transform duration-150 ease-out"
-              style={{ transform: `scale(${zoom})`, transformOrigin: 'center center' }}
+              className="relative aspect-video mx-auto transition-[width,height] duration-150 ease-out"
+              style={{ width: `${zoom * 100}%`, minWidth: '100%' }}
             >
               <Image
                 src={lightboxImage.src}
