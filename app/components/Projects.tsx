@@ -8,6 +8,7 @@ type FilterType = 'all' | 'workflows' | 'deep-learning' | 'rag' | 'web-app';
 
 export default function Projects() {
   const [projectFilter, setProjectFilter] = useState<FilterType>('all');
+  const [lightboxImage, setLightboxImage] = useState<{ src: string; alt: string } | null>(null);
 
   const filteredProjects = projects.filter((p) => {
     if (projectFilter === 'all') return true;
@@ -59,14 +60,19 @@ export default function Projects() {
               >
                 <div className="space-y-3">
                   {project.image && (
-                    <div className="relative w-full aspect-video overflow-hidden rounded border border-[#E5E5E2] bg-[#0D0D0D]">
+                    <button
+                      type="button"
+                      onClick={() => setLightboxImage({ src: project.image!, alt: project.title })}
+                      className="relative w-full aspect-video overflow-hidden rounded border border-[#E5E5E2] bg-[#0D0D0D] cursor-zoom-in block"
+                      aria-label={`Enlarge screenshot for ${project.title}`}
+                    >
                       <Image
                         src={project.image}
                         alt={project.title}
                         fill
                         className="object-cover"
                       />
-                    </div>
+                    </button>
                   )}
 
                   {project.category && (
@@ -109,6 +115,32 @@ export default function Projects() {
           ))}
         </ul>
       </div>
+
+      {lightboxImage && (
+        <div
+          className="fixed inset-0 z-50 flex items-center justify-center bg-black/80 p-6 cursor-zoom-out"
+          onClick={() => setLightboxImage(null)}
+          role="dialog"
+          aria-modal="true"
+        >
+          <button
+            type="button"
+            onClick={() => setLightboxImage(null)}
+            className="absolute top-5 right-5 text-white/80 hover:text-white text-3xl leading-none cursor-pointer"
+            aria-label="Close enlarged image"
+          >
+            &times;
+          </button>
+          <div className="relative w-full max-w-5xl aspect-video" onClick={(e) => e.stopPropagation()}>
+            <Image
+              src={lightboxImage.src}
+              alt={lightboxImage.alt}
+              fill
+              className="object-contain"
+            />
+          </div>
+        </div>
+      )}
     </section>
   );
 }
