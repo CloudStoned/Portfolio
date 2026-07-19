@@ -9,6 +9,31 @@ type FilterType = 'all' | 'workflows' | 'deep-learning' | 'rag' | 'web-app';
 export default function Projects() {
   const [projectFilter, setProjectFilter] = useState<FilterType>('all');
   const [lightboxImage, setLightboxImage] = useState<{ src: string; alt: string } | null>(null);
+  const [zoom, setZoom] = useState(1);
+
+  const MIN_ZOOM = 1;
+  const MAX_ZOOM = 3;
+
+  const openLightbox = (src: string, alt: string) => {
+    setLightboxImage({ src, alt });
+    setZoom(1);
+  };
+
+  const closeLightbox = () => {
+    setLightboxImage(null);
+    setZoom(1);
+  };
+
+  const zoomIn = () => setZoom((z: number) => Math.min(MAX_ZOOM, +(z + 0.5).toFixed(2)));
+  const zoomOut = () => setZoom((z: number) => Math.max(MIN_ZOOM, +(z - 0.5).toFixed(2)));
+
+  const handleWheelZoom = (e: React.WheelEvent) => {
+    e.preventDefault();
+    setZoom((z: number) => {
+      const next = e.deltaY < 0 ? z + 0.25 : z - 0.25;
+      return Math.min(MAX_ZOOM, Math.max(MIN_ZOOM, +next.toFixed(2)));
+    });
+  };
 
   const filteredProjects = projects.filter((p) => {
     if (projectFilter === 'all') return true;
@@ -62,7 +87,7 @@ export default function Projects() {
                   {project.image && (
                     <button
                       type="button"
-                      onClick={() => setLightboxImage({ src: project.image!, alt: project.title })}
+                      onClick={() => openLightbox(project.image!, project.title)}
                       className="relative w-full aspect-video overflow-hidden rounded border border-[#E5E5E2] bg-[#0D0D0D] cursor-zoom-in block"
                       aria-label={`Enlarge screenshot for ${project.title}`}
                     >
@@ -118,26 +143,64 @@ export default function Projects() {
 
       {lightboxImage && (
         <div
-          className="fixed inset-0 z-50 flex items-center justify-center bg-black/80 p-6 cursor-zoom-out"
-          onClick={() => setLightboxImage(null)}
+          className="fixed inset-0 z-50 flex items-center justify-center bg-black/80 p-6"
+          onClick={closeLightbox}
+          onWheel={handleWheelZoom}
           role="dialog"
           aria-modal="true"
         >
           <button
             type="button"
-            onClick={() => setLightboxImage(null)}
+            onClick={closeLightbox}
             className="absolute top-5 right-5 text-white/80 hover:text-white text-3xl leading-none cursor-pointer"
             aria-label="Close enlarged image"
           >
             &times;
           </button>
-          <div className="relative w-full max-w-5xl aspect-video" onClick={(e) => e.stopPropagation()}>
-            <Image
-              src={lightboxImage.src}
-              alt={lightboxImage.alt}
-              fill
-              className="object-contain"
-            />
+
+          <div
+            className="absolute top-5 left-5 flex items-center gap-2 bg-black/60 rounded-md p-1"
+            onClick={(e) => e.stopPropagation()}
+          >
+            <button
+              type="button"
+              onClick={zoomOut}
+              disabled={zoom <= MIN_ZOOM}
+              className="w-8 h-8 flex items-center justify-center text-white text-lg rounded hover:bg-white/10 disabled:opacity-30 disabled:cursor-not-allowed cursor-pointer"
+              aria-label="Zoom out"
+            >
+              −
+            </button>
+            <span className="text-white/80 text-xs w-10 text-center select-none">
+              {Math.round(zoom * 100)}%
+            </span>
+            <button
+              type="button"
+              onClick={zoomIn}
+              disabled={zoom >= MAX_ZOOM}
+              className="w-8 h-8 flex items-center justify-center text-white text-lg rounded hover:bg-white/10 disabled:opacity-30 disabled:cursor-not-allowed cursor-pointer"
+              aria-label="Zoom in"
+            >
+              +
+            </button>
+          </div>
+
+          <div
+            className="relative w-full max-w-5xl aspect-video overflow-auto"
+            onClick={(e) => e.stopPropagation()}
+          >
+            <div
+              className="relative w-full h-full transition-transform duration-150 ease-out"
+              style={{ transform: `scale(${zoom})`, transformOrigin: 'center center' }}
+            >
+              <Image
+                src={lightboxImage.src}
+                alt={lightboxImage.alt}
+                fill
+                className={zoom > 1 ? 'object-contain cursor-zoom-out' : 'object-contain cursor-zoom-in'}
+                onClick={() => (zoom > 1 ? zoomOut() : zoomIn())}
+              />
+            </div>
           </div>
         </div>
       )}
