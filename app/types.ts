@@ -5,6 +5,7 @@ export interface Project {
   automationAngle?: string;
   tags: string[];
   category?: string;
+  image?: string;
 }
 
 export interface ServiceCard {

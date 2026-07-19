@@ -54,16 +54,50 @@ export const techStack = {
 export const projects: Project[] = [
   {
     id: 1,
-    title: "Agentic Voice & Sales AI",
+    title: "AI Voice Receptionist",
     description:
-      "Telegram-triggered multi-agent AI platform with RAG, Supabase vector storage, ElevenLabs voice agent, Pipedrive CRM integration, and automated lead qualification.",
+      "n8n voice-call automation that triages inbound calls into damage claims and general inquiries, transcribes and stores call recordings, and auto-notifies homeowners and adjusters by email.",
     automationAngle:
-      "Fully automated sales pipeline — from lead capture to CRM entry — with zero manual input.",
-    tags: ["n8n", "RAG", "ElevenLabs", "Pipedrive", "Supabase", "OpenRouter"],
+      "Replaced manual call triage and note-taking with an always-on receptionist that logs and routes every call automatically.",
+    tags: ["n8n", "Webhook", "Gmail", "Supabase", "Call Transcription"],
     category: "workflows",
+    image: "/projects/ai-receptionist.png",
   },
   {
     id: 2,
+    title: "Facebook Messenger AI Bot",
+    description:
+      "Webhook-driven Messenger bot powered by an OpenRouter AI agent with memory, capable of holding context-aware conversations and taking actions via the Facebook Graph API.",
+    automationAngle:
+      "Turned Facebook DMs into a self-service conversation channel with zero manual replies.",
+    tags: ["n8n", "Facebook Graph API", "OpenRouter", "AI Agent", "Webhook"],
+    category: "workflows",
+    image: "/projects/fb-bot.png",
+  },
+  {
+    id: 3,
+    title: "AI Job Application Scraper",
+    description:
+      "Chat-triggered n8n agent that searches live job postings via RapidAPI, uses a Gemini AI agent with structured output to evaluate fit, then locates, copies, and tailors a resume in Google Drive for each match.",
+    automationAngle:
+      "Automated the entire job-hunting loop — from search to a tailored, ready-to-send resume.",
+    tags: ["n8n", "RapidAPI", "Google Gemini", "Google Drive", "Structured Output"],
+    category: "workflows",
+    image: "/projects/job-scraper.png",
+  },
+  {
+    id: 4,
+    title: "Lead Gen Automation",
+    description:
+      "A multi-stage n8n workflow that scrapes local business data from Google Maps via Apify, deduplicates and filters leads, then uses a Gemini AI agent to scrape each site for emails/socials and generate personalized outreach emails logged straight to Google Sheets.",
+    automationAngle:
+      "Transformed raw web scraping into a self-cleaning leads pipeline with AI-personalized outreach, populating Google Sheets in real-time.",
+    tags: ["n8n", "Apify", "Gemini API", "Google Sheets", "Workflow Automation"],
+    category: "workflows",
+    image: "/projects/lead-gen.png",
+  },
+  {
+    id: 5,
     title: "Leaf Image Classification System",
     description:
       "Deep learning system using YOLOv8 for leaf classification, benchmarked against ResNet, annotated via Roboflow. Optimized for production deployment.",
@@ -71,7 +105,7 @@ export const projects: Project[] = [
     category: "deep-learning",
   },
   {
-    id: 3,
+    id: 6,
     title: "RAG Q&A System",
     description:
       "Internal document Q&A system reducing manual search time and improving response accuracy for end users.",
@@ -81,33 +115,7 @@ export const projects: Project[] = [
     category: "rag",
   },
   {
-    id: 4,
-    title: "AI Content Automation Engine",
-    description:
-      "Automated quiz and lesson plan generation pipeline replacing manual document scanning and drafting — enabling scalable curriculum production.",
-    automationAngle:
-      "Turned a days-long manual process into a fully automated pipeline.",
-    tags: ["OpenAI", "Python", "Automation", "Prompt Engineering"],
-    category: "workflows",
-  },
-  {
-    id: 5,
-    title: "Lead Gen Automation",
-    description:
-      "A multi-stage n8n workflow that scrapes local business data via Apify, utilizes Gemini API to extract and clean emails and social links from HTML, and saves structured leads in Google Sheets.",
-    automationAngle:
-      "Transformed raw web scraping into a self-cleaning leads pipeline that populates Google Sheets in real-time.",
-    tags: [
-      "n8n",
-      "Apify",
-      "Gemini API",
-      "Google Sheets",
-      "Workflow Automation",
-    ],
-    category: "workflows",
-  },
-  {
-    id: 6,
+    id: 7,
     title: "Cart Snap",
     description:
       "A smart, real-time web-based grocery assistant and budget tracker. It helps users manage their shopping basket, capture photos of items, manually log pricing, organize products by custom departments, and track total expenditures in real time against a personal budget limit.",

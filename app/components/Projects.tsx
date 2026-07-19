@@ -1,6 +1,7 @@
 'use client';
 
 import React, { useState } from 'react';
+import Image from 'next/image';
 import { projects } from '../data/portfolioData';
 
 type FilterType = 'all' | 'workflows' | 'deep-learning' | 'rag' | 'web-app';
@@ -53,11 +54,22 @@ export default function Projects() {
         <ul className="grid grid-cols-1 md:grid-cols-2 gap-6" id="projects-grid">
           {filteredProjects.map((project) => (
             <li key={project.id}>
-              <article 
+              <article
                 className="bg-white border border-[#E5E5E2] rounded-md p-6 hover:border-[#4A6FA5] hover:shadow-[0_4px_12px_rgba(0,0,0,0.02)] transition-all duration-200 flex flex-col justify-between space-y-4 h-full"
                 id={`project-card-${project.id}`}
               >
                 <div className="space-y-3">
+                  {project.image && (
+                    <div className="relative w-full aspect-video overflow-hidden rounded border border-[#E5E5E2] bg-[#0D0D0D]">
+                      <Image
+                        src={project.image}
+                        alt={project.title}
+                        fill
+                        className="object-cover"
+                      />
+                    </div>
+                  )}
+
                   {project.category && (
                     <span className="text-[9px] font-bold uppercase tracking-widest text-[#4A6FA5] bg-[#4A6FA5]/10 px-2 py-0.5 rounded inline-block">
                       {project.category === 'workflows' ? 'n8n Workflow' :
