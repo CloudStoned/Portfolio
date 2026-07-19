@@ -43,7 +43,6 @@ export default function Projects() {
                   {tab === 'all' && 'All Projects'}
                   {tab === 'workflows' && 'Workflows'}
                   {tab === 'deep-learning' && 'Computer Vision'}
-                  {tab === 'rag' && 'RAG / QA'}
                   {tab === 'web-app' && 'Web Apps'}
                 </button>
               </li>
