@@ -112,7 +112,7 @@ export const projects: Project[] = [
     automationAngle:
       "Replaced hours of manual document searching with instant AI-powered answers.",
     tags: ["RAG", "LangChain", "Vector DB", "Python"],
-    category: "rag",
+    category: "web-app",
   },
   {
     id: 7,
@@ -121,7 +121,7 @@ export const projects: Project[] = [
       "A smart, real-time web-based grocery assistant and budget tracker. It helps users manage their shopping basket, capture photos of items, manually log pricing, organize products by custom departments, and track total expenditures in real time against a personal budget limit.",
     automationAngle: "",
     tags: ["NextJS", "Google AI Studio", "Google Stitch", "Antigravity"],
-    category: "",
+    category: "web-app",
   },
 ];
 
