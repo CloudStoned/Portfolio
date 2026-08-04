@@ -25,7 +25,7 @@ export default function ContactInfo({
           Ready to Automate?
         </h2>
         <p className="text-sm text-[#555555] leading-relaxed">
-          {"Tell me what's slowing you down — I'll build the system that fixes it. Available for freelance projects starting immediately."}
+          {"Tell me what's slowing you down — I'll show you exactly how to fix it on a free automation audit call. No pressure, no sales pitch, just a clear plan."}
         </p>
       </div>
 

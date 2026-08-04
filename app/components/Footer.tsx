@@ -10,7 +10,7 @@ export default function Footer() {
       id="footer-section"
     >
       <div className="mx-auto max-w-7xl flex flex-col sm:flex-row items-center justify-between gap-4">
-        <p>© {new Date().getFullYear()} Cloud Neo Bagtas. All rights reserved.</p>
+        <p>© {new Date().getFullYear()} thecloudstack. All rights reserved.</p>
         <div className="flex items-center gap-1">
           <MapPin className="w-3.5 h-3.5 text-[#4A6FA5]" />
           <span>Malvar, Batangas, Philippines</span>

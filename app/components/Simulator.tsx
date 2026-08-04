@@ -24,7 +24,7 @@ export default function Simulator() {
             <span className="w-2 h-2 rounded-full bg-yellow-400"></span>
             <span className="w-2 h-2 rounded-full bg-green-400"></span>
           </div>
-          <span className="text-[10px] uppercase tracking-wider font-semibold text-[#555555]">n8n_agent_pipeline_v2.json</span>
+          <span className="text-[10px] uppercase tracking-wider font-semibold text-[#555555]">lead_response_pipeline.live</span>
         </div>
         <button 
           onClick={() => setIsSimRunning(!isSimRunning)} 
@@ -45,8 +45,8 @@ export default function Simulator() {
               <Mail className="w-3.5 h-3.5" />
             </div>
             <div className="flex-grow min-w-0">
-              <p className="text-[11px] font-bold text-[#1A1A1A] uppercase tracking-wider">TRIGGER: Incoming Lead</p>
-              <p className="text-[10px] text-[#555555] truncate">Webhook received from Contact, Email, or Telegram request</p>
+              <p className="text-[11px] font-bold text-[#1A1A1A] uppercase tracking-wider">New Inquiry Received</p>
+              <p className="text-[10px] text-[#555555] truncate">Captured instantly from your website, email, or chat</p>
             </div>
             {simStep > 0 && <CheckCircle2 className="w-3.5 h-3.5 text-green-500 self-center" />}
           </div>
@@ -58,8 +58,8 @@ export default function Simulator() {
               <Bot className="w-3.5 h-3.5" />
             </div>
             <div className="flex-grow min-w-0">
-              <p className="text-[11px] font-bold text-[#1A1A1A] uppercase tracking-wider">PROCESSING: Claude API & Vector DB</p>
-              <p className="text-[10px] text-[#555555] truncate">Matching custom prompt against internal system RAG knowledge</p>
+              <p className="text-[11px] font-bold text-[#1A1A1A] uppercase tracking-wider">AI Reviews & Responds</p>
+              <p className="text-[10px] text-[#555555] truncate">Understands the request and checks your business info for the right answer</p>
             </div>
             {simStep > 1 ? <CheckCircle2 className="w-3.5 h-3.5 text-green-500 self-center" /> : simStep === 1 ? <span className="w-1.5 h-1.5 rounded-full bg-[#4A6FA5] animate-ping self-center" /> : null}
           </div>
@@ -71,8 +71,8 @@ export default function Simulator() {
               <Sliders className="w-3.5 h-3.5" />
             </div>
             <div className="flex-grow min-w-0">
-              <p className="text-[11px] font-bold text-[#1A1A1A] uppercase tracking-wider">INTEGRATION: CRM & Lead Scoring</p>
-              <p className="text-[10px] text-[#555555] truncate">Syncing data to Pipedrive, notifying team via Discord/Slack</p>
+              <p className="text-[11px] font-bold text-[#1A1A1A] uppercase tracking-wider">Logged & Team Notified</p>
+              <p className="text-[10px] text-[#555555] truncate">Saved to your system and flagged to the right person automatically</p>
             </div>
             {simStep > 2 ? <CheckCircle2 className="w-3.5 h-3.5 text-green-500 self-center" /> : simStep === 2 ? <span className="w-1.5 h-1.5 rounded-full bg-[#4A6FA5] animate-ping self-center" /> : null}
           </div>
@@ -84,17 +84,16 @@ export default function Simulator() {
               <Check className="w-3.5 h-3.5" />
             </div>
             <div className="flex-grow min-w-0">
-              <p className="text-[11px] font-bold text-[#1A1A1A] uppercase tracking-wider">COMPLETED: Autopilot Work Done</p>
-              <p className="text-[10px] text-[#555555] truncate">Zero human interaction, saved approximately 45 Minutes</p>
+              <p className="text-[11px] font-bold text-[#1A1A1A] uppercase tracking-wider">Done — No One Lifted a Finger</p>
+              <p className="text-[10px] text-[#555555] truncate">Handled start to finish while your team focused on other things</p>
             </div>
             {simStep === 3 && <Sparkles className="w-3.5 h-3.5 text-[#4A6FA5] animate-spin self-center" />}
           </div>
         </li>
       </ol>
 
-      <div className="mt-4 pt-4 border-t border-[#E5E5E2] flex items-center justify-between text-[10px] text-[#555555] uppercase tracking-wider" id="simulator-metrics">
-        <span>Average Execution Time: <strong className="text-[#1A1A1A]">1.4s</strong></span>
-        <span>Success Rate: <strong className="text-[#1A1A1A]">100%</strong></span>
+      <div className="mt-4 pt-4 border-t border-[#E5E5E2] flex items-center justify-center text-[10px] text-[#555555] uppercase tracking-wider text-center" id="simulator-metrics">
+        <span>Runs automatically, every single time — no one has to remember to do it</span>
       </div>
     </div>
   );

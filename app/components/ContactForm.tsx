@@ -66,10 +66,10 @@ export default function ContactForm({
               className="p-4 bg-green-50 border border-green-200 text-green-800 rounded text-xs space-y-1"
             >
               <p className="font-bold flex items-center gap-1.5 uppercase tracking-wider text-[10px]">
-                <CheckCircle2 className="w-3.5 h-3.5 text-green-600" /> Inquiry Dispatched Safely!
+                <CheckCircle2 className="w-3.5 h-3.5 text-green-600" /> Message Sent!
               </p>
               <p className="text-green-700 leading-relaxed text-[11px]">
-                Thank you! Cloud Neo has received your workflow context. He will get back to you within 24 hours.
+                {"Thanks — I've got your message and will get back to you within 24 hours."}
               </p>
             </motion.div>
           )}
@@ -79,7 +79,7 @@ export default function ContactForm({
               className="p-4 bg-red-50 border border-red-200 text-red-800 rounded text-xs space-y-1"
             >
               <p className="font-bold flex items-center gap-1.5 uppercase tracking-wider text-[10px]">
-                <AlertCircle className="w-3.5 h-3.5 text-red-600" /> Inquiry Dispatch Failed
+                <AlertCircle className="w-3.5 h-3.5 text-red-600" /> Something Went Wrong
               </p>
               <p className="text-red-700 leading-relaxed text-[11px]">
                 {submitError}

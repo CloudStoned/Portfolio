@@ -13,9 +13,9 @@ export default function About() {
               <div className="absolute -inset-1 rounded-full bg-[#4A6FA5]/15 opacity-75 blur-md" />
               
               <div className="relative w-full h-full rounded-full overflow-hidden border border-[#E5E5E2] bg-[#FFFFFF] shadow-md">
-                <Image 
-                  src="/avatar.png" 
-                  alt="Cloud Neo Bagtas Profile" 
+                <Image
+                  src="/me.jpeg"
+                  alt="Cloud Neo Bagtas, founder of thecloudstack"
                   fill
                   sizes="(max-width: 640px) 256px, 288px"
                   className="object-cover transition-transform duration-500 hover:scale-105"
@@ -27,7 +27,7 @@ export default function About() {
 
           <div className="lg:col-span-7 space-y-5" id="about-content">
             <span className="text-[10px] font-bold uppercase tracking-[0.2em] text-[#4A6FA5] block">
-              ABOUT CLOUD NEO
+              ABOUT THECLOUDSTACK
             </span>
             
             <h2 className="text-2.5xl font-extrabold text-[#1A1A1A] leading-tight" id="about-headline">
@@ -35,7 +35,7 @@ export default function About() {
             </h2>
 
             <p className="text-sm text-[#555555] leading-relaxed" id="about-description">
-              Cloud Neo is an AI Automation Specialist with 2+ years of experience building intelligent systems that replace manual work. He designs and ships custom automation pipelines, AI agents, and full stack integrations using n8n, Claude APIs, and LangChain — helping small businesses and startups save time, reduce errors, and scale without adding headcount.
+              I build systems that take manual work off your plate call handling, lead follow-up, document search, customer replies — and hand it to something that runs on its own. I work directly with businesses, from the first conversation about what&apos;s slowing them down to the day the system goes live, to save time, cut errors, and grow without adding headcount.
             </p>
 
             <ul className="grid grid-cols-1 sm:grid-cols-2 gap-3 pt-3 text-xs" id="about-bullets">
@@ -43,17 +43,10 @@ export default function About() {
                 <div className="w-1.5 h-1.5 rounded-full bg-[#4A6FA5]" />
                 <span>Based in: <strong className="text-[#1A1A1A]">Malvar, Batangas, PH</strong></span>
               </li>
+
               <li className="flex items-center gap-2 text-[#555555] bg-[#EEEFEA]/60 border border-[#E5E5E2]/40 rounded px-3 py-2">
                 <div className="w-1.5 h-1.5 rounded-full bg-[#4A6FA5]" />
-                <span>Focusing on: <strong className="text-[#1A1A1A]">Workflow Automation</strong></span>
-              </li>
-              <li className="flex items-center gap-2 text-[#555555] bg-[#EEEFEA]/60 border border-[#E5E5E2]/40 rounded px-3 py-2">
-                <div className="w-1.5 h-1.5 rounded-full bg-[#4A6FA5]" />
-                <span>Target Clients: <strong className="text-[#1A1A1A]">Startups & Small Businesses</strong></span>
-              </li>
-              <li className="flex items-center gap-2 text-[#555555] bg-[#EEEFEA]/60 border border-[#E5E5E2]/40 rounded px-3 py-2">
-                <div className="w-1.5 h-1.5 rounded-full bg-[#4A6FA5]" />
-                <span>Core Setup: <strong className="text-[#1A1A1A]">n8n, Claude API, Python, NextJS</strong></span>
+                <span>Engagement: <strong className="text-[#1A1A1A]">Direct, one-on-one — no account managers</strong></span>
               </li>
             </ul>
           </div>

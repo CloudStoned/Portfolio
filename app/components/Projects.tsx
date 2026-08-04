@@ -4,7 +4,7 @@ import React, { useState } from 'react';
 import Image from 'next/image';
 import { projects } from '../data/portfolioData';
 
-type FilterType = 'all' | 'workflows' | 'deep-learning' | 'rag' | 'web-app';
+type FilterType = 'all' | 'automation' | 'ai-agents' | 'integration';
 
 export default function Projects() {
   const [projectFilter, setProjectFilter] = useState<FilterType>('all');
@@ -49,27 +49,27 @@ export default function Projects() {
             <span className="text-[10px] font-bold uppercase tracking-[0.2em] text-[#4A6FA5] block">
               SELECTED WORK
             </span>
-            <h2 className="text-3xl font-extrabold text-[#1A1A1A]">Automation Systems In Action</h2>
+            <h2 className="text-3xl font-extrabold text-[#1A1A1A]">Real Systems, Built For Real Businesses</h2>
             <p className="max-w-xl text-sm text-[#555555]">
-              A display of real automation frameworks, deep learning tasks, and integrations completed to optimize workflows.
+              Here&apos;s what changed for the businesses I&apos;ve built for — the problem, the fix, and the result.
             </p>
           </div>
 
           <ul className="flex flex-wrap gap-1 rounded border border-[#E5E5E2] p-1 bg-[#F9F9F7] w-fit shrink-0" id="filter-tabs">
-            {(['all', 'workflows', 'deep-learning', 'rag', 'web-app'] as const).map((tab) => (
+            {(['all', 'automation', 'ai-agents', 'integration'] as const).map((tab) => (
               <li key={tab}>
                 <button
                   onClick={() => setProjectFilter(tab)}
                   className={`text-[10px] uppercase tracking-wider px-3 py-1.5 rounded font-bold transition-all duration-150 cursor-pointer ${
-                    projectFilter === tab 
-                      ? 'bg-[#4A6FA5] text-white shadow-xs' 
+                    projectFilter === tab
+                      ? 'bg-[#4A6FA5] text-white shadow-xs'
                       : 'text-[#555555] hover:text-[#1A1A1A]'
                   }`}
                 >
                   {tab === 'all' && 'All Projects'}
-                  {tab === 'workflows' && 'Workflows'}
-                  {tab === 'deep-learning' && 'Computer Vision'}
-                  {tab === 'web-app' && 'Web Apps'}
+                  {tab === 'automation' && 'Workflow Automation'}
+                  {tab === 'ai-agents' && 'AI Agents & Chatbots'}
+                  {tab === 'integration' && 'Systems & Integration'}
                 </button>
               </li>
             ))}
@@ -102,10 +102,9 @@ export default function Projects() {
 
                   {project.category && (
                     <span className="text-[9px] font-bold uppercase tracking-widest text-[#4A6FA5] bg-[#4A6FA5]/10 px-2 py-0.5 rounded inline-block">
-                      {project.category === 'workflows' ? 'n8n Workflow' :
-                       project.category === 'deep-learning' ? 'Computer Vision' :
-                       project.category === 'rag' ? 'AI Retrieval' :
-                       project.category === 'web-app' ? 'Web App' :
+                      {project.category === 'automation' ? 'Workflow Automation' :
+                       project.category === 'ai-agents' ? 'AI Agent' :
+                       project.category === 'integration' ? 'System Integration' :
                        project.category}
                     </span>
                   )}

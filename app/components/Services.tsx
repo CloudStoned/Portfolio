@@ -3,7 +3,6 @@
 import React from 'react';
 import { Zap, Bot, Database } from 'lucide-react';
 import { services } from '../data/portfolioData';
-import TechStack from './TechStack';
 import { scrollTo } from '../utils/scroll';
 
 const IconMap = {
@@ -24,7 +23,7 @@ export default function Services() {
             How I Help Your Business Run on Autopilot
           </h2>
           <p className="text-sm text-[#555555] leading-relaxed">
-            I replace highly repeatable manual chores with dependable software agents. No fluff — just logic pipelines designed to optimize operations.
+            I replace the manual busywork slowing your team down with systems that run on their own. No fluff just fewer hours lost to tasks a computer should be doing.
           </p>
         </div>
 
@@ -59,21 +58,20 @@ export default function Services() {
               {"Every repetitive task is a taxing expense on your speed and growth."}
             </p>
             <p className="text-base text-[#555555] leading-relaxed max-w-2xl mx-auto">
-              {"By deploying secure AI agents and custom-built n8n workflows, you transfer the friction of manual chores to robust cloud pipelines. Startups and small businesses run faster, minimize operating errors, and reclaim critical focus for high-value strategic execution."}
+              {"Hand the manual chores to a system built to run without you, and your team gets its time back for the work that actually grows the business."}
             </p>
           </blockquote>
 
           <div className="pt-2 flex justify-center gap-4">
-            <button 
+            <button
               onClick={() => scrollTo('contact')}
               className="rounded bg-[#4A6FA5] text-white px-6 py-3 text-xs font-bold uppercase tracking-[0.12em] hover:bg-[#4A6FA5]/95 transition-all cursor-pointer shadow-xs"
             >
-              Automate My Stack
+              Get My Free Automation Audit
             </button>
           </div>
         </div>
 
-        <TechStack />
       </div>
     </section>
   );

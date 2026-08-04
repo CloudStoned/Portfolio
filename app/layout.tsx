@@ -9,8 +9,8 @@ const inter = Inter({
 });
 
 export const metadata: Metadata = {
-  title: 'Cloud Neo Bagtas — AI Automation Specialist',
-  description: 'Portfolio of Cloud Neo Bagtas, AI Automation Specialist. Helping small businesses and startups automate their entire workflow and build AI agents.',
+  title: 'thecloudstack — AI Automation Specialist',
+  description: 'Custom automation systems for small businesses and startups. I take the manual, repetitive work off your plate so your team can move faster without hiring more — get a free automation audit.',
 };
 
 export default function RootLayout({children}: {children: React.ReactNode}) {

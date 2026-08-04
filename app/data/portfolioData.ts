@@ -4,124 +4,77 @@ export const services: ServiceCard[] = [
   {
     title: "Workflow Automation",
     description:
-      "I map and automate your entire business workflow using n8n — connecting your tools, eliminating manual steps, and making your operations run on autopilot.",
+      "I take the repetitive, manual steps eating up your team's day data entry, follow-ups, scheduling, reporting and turn them into a system that runs itself, 24/7, without anyone babysitting it.",
     iconName: "Zap",
   },
   {
     title: "AI Agents & Chatbots",
     description:
-      "I build intelligent AI agents powered by Claude and LangChain that handle conversations, answer questions, qualify leads, and take action — without human input.",
+      "I build always-on assistants that talk to your customers, answer their questions, qualify leads, and take action on your behalf so nobody's ever waiting on a reply, even at 2am.",
     iconName: "Bot",
   },
   {
-    title: "System Integration & RAG",
+    title: "Systems & Data Integration",
     description:
-      "I connect your existing tools, databases, and documents into one intelligent system — so your team gets instant answers and your data actually works for you.",
+      "I connect the tools and documents you already use into one system that gives your team instant answers no more digging through folders or asking around for the right file.",
     iconName: "Database",
   },
 ];
-
-export const techStack = {
-  ai: [
-    "n8n",
-    "Zapier",
-    "Make",
-    "Anthropic Claude (API, Claude Code, MCP)",
-    "LangChain",
-    "LangGraph",
-    "LangSmith",
-    "RAG",
-    "Vector Databases",
-    "Prompt Engineering",
-    "Gemini API",
-    "ElevenLabs",
-    "Supabase",
-    "OpenRouter",
-  ],
-  dev: ["Python", "NextJs", "FastAPI", "RESTful APIs", "Webhook"],
-  tools: [
-    "ChatGPT",
-    "Jira",
-    "Heroku",
-    "Supabase",
-    "Git",
-    "Docker",
-    "Twilio",
-    "GHL",
-  ],
-};
 
 export const projects: Project[] = [
   {
     id: 1,
     title: "AI Voice Receptionist",
     description:
-      "n8n voice-call automation that triages inbound calls into damage claims and general inquiries, transcribes and stores call recordings, and auto-notifies homeowners and adjusters by email.",
+      "An always-on phone system that answers every inbound call, sorts damage claims from general questions, transcribes the conversation, and automatically notifies the right person by email — so no call goes unanswered and nothing gets written down by hand.",
     automationAngle:
-      "Replaced manual call triage and note-taking with an always-on receptionist that logs and routes every call automatically.",
-    tags: ["n8n", "Webhook", "Gmail", "Supabase", "Call Transcription"],
-    category: "workflows",
+      "Replaced manual call triage and note-taking with a receptionist that never misses a call and routes every one of them automatically.",
+    tags: ["Inbound Call Handling", "Auto-Transcription", "Smart Routing", "Email Notifications"],
+    category: "automation",
     image: "/projects/ai-receptionist.png",
   },
   {
     id: 2,
     title: "Facebook Messenger AI Bot",
     description:
-      "Webhook-driven Messenger bot powered by an OpenRouter AI agent with memory, capable of holding context-aware conversations and taking actions via the Facebook Graph API.",
+      "A Messenger assistant that holds real, context-aware conversations with customers and can take action on their behalf — checking orders, answering questions, or escalating when needed — without a human typing a single reply.",
     automationAngle:
-      "Turned Facebook DMs into a self-service conversation channel with zero manual replies.",
-    tags: ["n8n", "Facebook Graph API", "OpenRouter", "AI Agent", "Webhook"],
-    category: "workflows",
+      "Turned Facebook DMs into a self-service channel — customers get instant, accurate answers any time of day, with zero manual replies.",
+    tags: ["Facebook Messenger", "Always-On Replies", "Context-Aware Conversations", "Zero Manual Replies"],
+    category: "ai-agents",
     image: "/projects/fb-bot.png",
   },
   {
     id: 3,
-    title: "AI Job Application Scraper",
+    title: "AI Research & Matching Agent",
     description:
-      "Chat-triggered n8n agent that searches live job postings via RapidAPI, uses a Gemini AI agent with structured output to evaluate fit, then locates, copies, and tailors a resume in Google Drive for each match.",
+      "An agent that searches live postings, evaluates each one against a set of criteria, then prepares a tailored, ready-to-send document for every match — originally built for job hunting, the same pattern powers lead qualification, candidate screening, or content personalization for any business.",
     automationAngle:
-      "Automated the entire job-hunting loop — from search to a tailored, ready-to-send resume.",
-    tags: ["n8n", "RapidAPI", "Google Gemini", "Google Drive", "Structured Output"],
-    category: "workflows",
+      "Automated an entire search-and-match workflow end to end — from finding the right opportunities to producing a tailored result, with no manual review needed.",
+    tags: ["Automated Search", "AI Matching", "Personalized Output", "Document Generation"],
+    category: "ai-agents",
     image: "/projects/job-scraper.png",
   },
   {
     id: 4,
     title: "Lead Gen Automation",
     description:
-      "A multi-stage n8n workflow that scrapes local business data from Google Maps via Apify, deduplicates and filters leads, then uses a Gemini AI agent to scrape each site for emails/socials and generate personalized outreach emails logged straight to Google Sheets.",
+      "A pipeline that finds local businesses matching your ideal customer profile, removes duplicates and dead ends, then researches each one and writes a personalized outreach message — landing straight in a spreadsheet, ready to send.",
     automationAngle:
-      "Transformed raw web scraping into a self-cleaning leads pipeline with AI-personalized outreach, populating Google Sheets in real-time.",
-    tags: ["n8n", "Apify", "Gemini API", "Google Sheets", "Workflow Automation"],
-    category: "workflows",
+      "Turned hours of manual prospecting and copy-pasting into a self-cleaning leads list with ready-to-send, personalized outreach — updating in real time.",
+    tags: ["Lead Discovery", "Auto-Deduplication", "Personalized Outreach", "Live Spreadsheet Sync"],
+    category: "automation",
     image: "/projects/lead-gen.png",
   },
   {
     id: 5,
-    title: "Leaf Image Classification System",
+    title: "Internal Knowledge Assistant",
     description:
-      "Deep learning system using YOLOv8 for leaf classification, benchmarked against ResNet, annotated via Roboflow. Optimized for production deployment.",
-    tags: ["Python", "YOLOv8", "ResNet", "Roboflow", "Deep Learning"],
-    category: "deep-learning",
-  },
-  {
-    id: 6,
-    title: "RAG Q&A System",
-    description:
-      "Internal document Q&A system reducing manual search time and improving response accuracy for end users.",
+      "An internal assistant that answers questions about your company's own documents instantly and accurately — so your team stops digging through folders or asking around for the right file.",
     automationAngle:
-      "Replaced hours of manual document searching with instant AI-powered answers.",
-    tags: ["RAG", "LangChain", "Vector DB", "Python"],
-    category: "web-app",
-  },
-  {
-    id: 7,
-    title: "Cart Snap",
-    description:
-      "A smart, real-time web-based grocery assistant and budget tracker. It helps users manage their shopping basket, capture photos of items, manually log pricing, organize products by custom departments, and track total expenditures in real time against a personal budget limit.",
-    automationAngle: "",
-    tags: ["NextJS", "Google AI Studio", "Google Stitch", "Antigravity"],
-    category: "web-app",
+      "Replaced hours of manual document searching with instant, accurate answers pulled straight from your own files.",
+    tags: ["Instant Answers", "Document Search", "Company Knowledge Base", "Reduced Search Time"],
+    category: "integration",
   },
 ];
 
@@ -131,5 +84,4 @@ export const certifications = [
   "Develop LLM Powered AI Agents with LangGraph",
   "The Complete Agentic AI Engineering Course",
   "AI Builder: Create Agents, Voice Agents & Automations in n8n",
-  "CompTIA IT Fundamentals+ (ITF+)",
 ];

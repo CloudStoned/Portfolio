@@ -22,9 +22,9 @@ export default function Header() {
           id="brand-logo"
         >
           <div className="relative h-8 w-8 flex-shrink-0 overflow-hidden rounded-lg border border-[#E5E5E2] bg-[#F9F9F7] p-0.5 transition-transform duration-200 group-hover:scale-105">
-            <Image 
-              src="/favicon.png" 
-              alt="Cloud Neo Bagtas Logo" 
+            <Image
+              src="/favicon.png"
+              alt="thecloudstack Logo"
               width={32}
               height={32}
               className="object-contain"
@@ -33,7 +33,7 @@ export default function Header() {
           </div>
           <div className="flex flex-col items-start">
             <span className="text-base font-bold tracking-tight text-[#1A1A1A] group-hover:text-[#4A6FA5] transition-colors duration-150">
-              Cloud Neo Bagtas
+              thecloudstack
             </span>
             <span className="text-[9px] uppercase tracking-[0.16em] text-[#555555]">
               AI Automation Specialist
@@ -64,11 +64,11 @@ export default function Header() {
               </button>
             </li>
             <li>
-              <button 
-                onClick={() => handleScroll('contact')} 
+              <button
+                onClick={() => handleScroll('contact')}
                 className="border border-[#4A6FA5] bg-transparent text-[#4A6FA5] hover:bg-[#4A6FA5] hover:text-white px-5 py-2 text-xs font-semibold uppercase tracking-[0.12em] transition-all duration-200 cursor-pointer rounded"
               >
-                Inquire
+                Free Audit
               </button>
             </li>
           </ul>
@@ -99,11 +99,11 @@ export default function Header() {
               <button onClick={() => handleScroll('services')} className="text-left text-xs uppercase tracking-[0.12em] text-[#555555] py-2 border-b border-[#E5E5E2]/50 hover:text-[#4A6FA5] transition-colors cursor-pointer">Services</button>
               <button onClick={() => handleScroll('projects')} className="text-left text-xs uppercase tracking-[0.12em] text-[#555555] py-2 border-b border-[#E5E5E2]/50 hover:text-[#4A6FA5] transition-colors cursor-pointer">Projects</button>
               <button onClick={() => handleScroll('experience')} className="text-left text-xs uppercase tracking-[0.12em] text-[#555555] py-2 border-b border-[#E5E5E2]/50 hover:text-[#4A6FA5] transition-colors cursor-pointer">Experience</button>
-              <button 
-                onClick={() => handleScroll('contact')} 
+              <button
+                onClick={() => handleScroll('contact')}
                 className="w-full text-center border border-[#4A6FA5] py-2 text-xs uppercase font-semibold tracking-[0.12em] text-[#4A6FA5] hover:bg-[#4A6FA5] hover:text-white transition-all cursor-pointer rounded"
               >
-                {"Let's Work Together"}
+                {"Get My Free Audit"}
               </button>
             </nav>
           </motion.div>

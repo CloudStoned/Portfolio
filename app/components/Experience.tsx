@@ -1,7 +1,6 @@
 'use client';
 
 import React from 'react';
-import { GraduationCap } from 'lucide-react';
 import Certifications from './Certifications';
 
 export default function Experience() {
@@ -10,7 +9,7 @@ export default function Experience() {
       <div className="mx-auto max-w-7xl">
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-12">
           
-          {/* Left Column - Work Experience & Education */}
+          {/* Left Column - Work Experience */}
           <div className="lg:col-span-7 space-y-10" id="experience-column">
             <div className="space-y-2">
               <span className="text-[10px] font-bold uppercase tracking-[0.2em] text-[#4A6FA5] block">
@@ -31,10 +30,10 @@ export default function Experience() {
                     </span>
                   </div>
                   <p className="text-xs text-[#555555] font-semibold">
-                    Providing specialized automation consultation for small businesses & startups.
+                    Providing specialized automation consulting for small businesses & startups.
                   </p>
                   <p className="text-xs text-[#555555] leading-relaxed">
-                    Designing reliable custom n8n workflow systems, standalone AI agents, and custom RAG databases to eliminate repetitive organizational workload.
+                    Designing and building custom systems — automated workflows, AI agents, and internal knowledge tools — that take repetitive work off a team&apos;s plate for good.
                   </p>
                 </div>
               </li>
@@ -50,34 +49,14 @@ export default function Experience() {
                     </span>
                   </div>
                   <p className="text-xs text-[#555555] font-semibold">
-                    Full-time engineering post dedicated to RAG and prototype AI architectures.
+                    Full-time engineering role focused on AI-powered document search and rapid prototyping.
                   </p>
                   <p className="text-xs text-[#555555] leading-relaxed">
-                    Built production-ready RAG documents retrieval engines, content automation systems, automated evaluation metrics, and client-facing live proof-of-concept solutions.
+                    Built production-ready document search tools, content automation systems, and live proof-of-concept demos that clients could see and use right away.
                   </p>
                 </div>
               </li>
             </ol>
-
-            {/* Education section */}
-            <div className="pt-8 border-t border-[#E5E5E2] space-y-4" id="education-block">
-              <div className="flex items-center gap-2">
-                <GraduationCap className="w-4.5 h-4.5 text-[#4A6FA5]" />
-                <h3 className="text-sm font-bold uppercase tracking-wider text-[#1A1A1A]">Education</h3>
-              </div>
-
-              <div className="bg-white p-5 rounded-md border border-[#E5E5E2] shadow-[0_4px_12px_rgba(0,0,0,0.02)] flex items-start gap-3.5">
-                <div className="p-2.5 bg-[#F9F9F7] border border-[#E5E5E2] text-[#555555] rounded">
-                  <GraduationCap className="w-5 h-5" />
-                </div>
-                <div className="space-y-0.5">
-                  <span className="text-[10px] text-[#555555] font-bold uppercase tracking-wider block">2021 – 2025</span>
-                  <h4 className="text-sm font-bold text-[#1A1A1A]">BS Computer Science</h4>
-                  <span className="text-xs text-[#555555]">FAITH Colleges — Batangas, Philippines</span>
-                </div>
-              </div>
-            </div>
-
           </div>
 
           {/* Right Column - Certifications */}
